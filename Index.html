@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            box-sizing: border-box;
+            background-color: beige;
+
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            color: black;
+        }
+       
+        .searchbar, .button{
+           position: relative;
+           width: 100%;
+           height: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin-top: 20px;
+        }
+        #textbox{
+            border-radius: 10px;
+            height: 30px;
+            width: 40%;
+            text-align: center;
+        }
+        .button{
+            border-radius: 10px;
+        }
+        #searchbutton{
+            border-radius: 10px;
+            background-color: green;
+            width: 75px;
+            height: 30px;
+        }
+    </style>
+    <!--Some personalization I added to the website-->
+    <title>Search Site</title>
+</head>
+<body>
+    <h1>Chavez Search Bar</h1>
+    <div class="searchbar">
+        <input type="text" name="string" class="query"  placeholder="Topic" id="textbox">
+    </div>
+    <!--Created a textbox where the string that will be searched will be inputted by user-->
+    <div class="button">
+        <button class="SearchButton" id="searchbutton">Search</button>
+    </div>
+    <!--Button created which will send the user the string it inputted to be sent to Javascript Function.-->
+
+
+    <script>
+        let query =document.querySelector('.query');
+        let SearchButton = document.querySelector('.SearchButton');
+
+        SearchButton.onclick = function(){
+            let url = 'https://www.google.com/search?q='+query.value;
+            window.open(url);
+        }
+    </script>
+    <!--This javascript gets the string the user inputted in the searchbar and when it clicks 
+    the button it adds it to the html link of a google searchbar. It then takes you to the new URL it
+    made after adding the topic you inputted-->
+    
+</body>
+</html>
